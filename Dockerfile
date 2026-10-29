@@ -1,6 +1,6 @@
 # Use the official Playwright image - it already ships with matching, pre-installed
 # browser binaries (Chromium, Firefox, WebKit) and all their OS-level dependencies.
-FROM mcr.microsoft.com/playwright:v1.48.0-jammy
+FROM mcr.microsoft.com/playwright:v1.64.1-jammy
 
 WORKDIR /app
 
