@@ -1,0 +1,85 @@
+{
+  "SearchHotel": [
+    {
+      "location": "Sydney",
+      "hotel": "Hotel Creek",
+      "roomType": "Standard",
+      "numberOfRooms": "1",
+      "checkInDate": "29/10/2026",
+      "checkOutDate": "30/10/2026",
+      "adultsPerRoom": "1",
+      "childrenPerRoom": "0",
+      "expected": {
+        "resultsPagePath": "SelectHotel\\.php",
+        "selectedHotelPagePath": "BookHotel\\.php"
+      }
+    },
+    {
+      "location": "Sydney",
+      "hotel": "Hotel Creek",
+      "roomType": "Standard",
+      "numberOfRooms": "1",
+      "checkInDate": "30/10/2026",
+      "checkOutDate": "29/10/2026",
+      "adultsPerRoom": "1",
+      "childrenPerRoom": "0",
+      "expected": {
+        "checkInMessage": "Check-In Date shall be before than Check-Out Date",
+        "checkOutMessage": "Check-Out Date shall be after than Check-In Date"
+      }
+    }
+  ],
+  "SearchHotelValidation": [
+    {
+      "name": "Search Hotel Test Case with Missing Location",
+      "input": {
+        "location": "",
+        "hotel": "Hotel Creek",
+        "roomType": "Standard",
+        "numberOfRooms": "1",
+        "checkInDate": "29/10/2026",
+        "checkOutDate": "30/10/2026",
+        "adultsPerRoom": "1",
+        "childrenPerRoom": "0"
+      },
+      "expected": {
+        "selector": "#location_span",
+        "message": "Please Select a Location"
+      }
+    },
+    {
+      "name": "Search Hotel Test Case with Missing Check-in Date",
+      "input": {
+        "location": "Sydney",
+        "hotel": "Hotel Creek",
+        "roomType": "Standard",
+        "numberOfRooms": "1",
+        "checkInDate": "",
+        "checkOutDate": "30/10/2026",
+        "adultsPerRoom": "1",
+        "childrenPerRoom": "0"
+      },
+      "expected": {
+        "selector": "#checkin_span",
+        "message": "Please Select Check-In Date"
+      }
+    },
+    {
+      "name": "Search Hotel Test Case with Missing Check-out Date",
+      "input": {
+        "location": "Sydney",
+        "hotel": "Hotel Creek",
+        "roomType": "Standard",
+        "numberOfRooms": "1",
+        "checkInDate": "29/10/2026",
+        "checkOutDate": "",
+        "adultsPerRoom": "1",
+        "childrenPerRoom": "0"
+      },
+      "expected": {
+        "selector": "#checkout_span",
+        "message": "Please Select Check-Out Date"
+      }
+    }
+  ]
+}

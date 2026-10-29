@@ -1,0 +1,84 @@
+{
+  "BookHotel": [
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "billingAddress": "123 Main St",
+      "creditCardNumber": "1234567890123456",
+      "creditCardType": "VISA",
+      "expiryMonth": "May",
+      "expiryYear": "2027",
+      "cvvNumber": "123",
+      "expected": {
+        "confirmationPagePath": "BookHotel\\.php",
+        "orderNumberPattern": "\\S+"
+      }
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "billingAddress": "",
+      "creditCardNumber": "",
+      "creditCardType": "",
+      "expiryMonth": "",
+      "expiryYear": "2027",
+      "cvvNumber": "",
+      "expected": {
+        "validationMessages": {
+          "firstName": "Please Enter your First Name",
+          "lastName": "Please Enter you Last Name",
+          "address": "Please Enter your Address",
+          "creditCardNumber": "Please Enter your 16 Digit Credit Card Number",
+          "creditCardType": "Please Select your Credit Card Type",
+          "expiryMonth": "Please Select your Credit Card Expiry Month",
+          "cvvNumber": "Please Enter your Credit Card CVV Number"
+        }
+      }
+    },
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "billingAddress": "123 Main St",
+      "creditCardNumber": "123456789012345",
+      "creditCardType": "VISA",
+      "expiryMonth": "May",
+      "expiryYear": "2027",
+      "cvvNumber": "123",
+      "expected": {
+        "validationMessages": {
+          "creditCardNumber": "Please Enter your 16 Digit Credit Card Number"
+        }
+      }
+    },
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "billingAddress": "123 Main St",
+      "creditCardNumber": "1234567890123456",
+      "creditCardType": "VISA",
+      "expiryMonth": "",
+      "expiryYear": "2027",
+      "cvvNumber": "123",
+      "expected": {
+        "validationMessages": {
+          "expiryMonth": "Please Select your Credit Card Expiry Month"
+        }
+      }
+    },
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "billingAddress": "123 Main St",
+      "creditCardNumber": "1234567890123456",
+      "creditCardType": "VISA",
+      "expiryMonth": "May",
+      "expiryYear": "2027",
+      "cvvNumber": "",
+      "expected": {
+        "validationMessages": {
+          "cvvNumber": "Please Enter your Credit Card CVV Number"
+        }
+      }
+    }
+  ]
+}
