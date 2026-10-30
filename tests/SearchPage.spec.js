@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import SearchPage from '../Pages/SearchPage';
 import searchData from '../testdata/SearchData.json';
 import { attachStepScreenshot } from '../Utilities/screenshot';
+import LogoutPage from '../Pages/LogoutPage';
 
 test.describe('Adactin Hotel Search Feature', () => {
 

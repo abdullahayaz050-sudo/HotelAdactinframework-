@@ -3,6 +3,7 @@ import SearchPage from '../Pages/SearchPage';
 import SelectPage from '../Pages/SelectPage';
 import searchData from '../testdata/SearchData.json';
 import { attachStepScreenshot } from '../Utilities/screenshot';
+import LogoutPage from '../Pages/LogoutPage';
 
 test.beforeEach(async ({ page }) => {
 

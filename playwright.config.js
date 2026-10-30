@@ -22,6 +22,10 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 1,
   workers: 1, // The shared test account cannot support parallel sessions.
+  timeout: 60000,
+  expect: {
+    timeout: 10000,
+  },
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
 reporter: [ 
   ['list'], 
@@ -31,6 +35,9 @@ reporter: [
   // reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    baseURL: 'https://adactinhotelapp.com/HotelAppBuild2/',
+    actionTimeout: 15000,
+    navigationTimeout: 30000,
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 

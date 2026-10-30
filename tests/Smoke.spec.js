@@ -59,7 +59,7 @@ test('Complete hotel booking flow', async ({ page }) => {
       booking.cvvNumber
     );
 
-    await page.waitForLoadState('networkidle', { timeout: 20000 });
+    await page.waitForLoadState('domcontentloaded', { timeout: 20000 });
   });
 
   await test.step('Verify order confirmation', async () => {

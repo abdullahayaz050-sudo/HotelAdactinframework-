@@ -1,6 +1,7 @@
 import { test } from '@playwright/test';
 import { attachStepScreenshot } from '../Utilities/screenshot';
 import { APP_BASE_URL } from './BasePage';
+import LoginPage from './LoginPage';
 
 class SearchPage {
   constructor(page) {
@@ -26,7 +27,13 @@ class SearchPage {
   async gotoSearchPage() {
     await test.step('Navigate to Search Hotel Page', async () => {
       await this.page.goto(new URL('SearchHotel.php', APP_BASE_URL).href, { waitUntil: 'domcontentloaded' });
-      await this.location.waitFor({ state: 'visible' });
+      if (!(await this.location.isVisible({ timeout: 3000 }))) {
+        const login = new LoginPage(this.page);
+        await login.gotoLoginPage();
+        await login.login();
+        await this.page.goto(new URL('SearchHotel.php', APP_BASE_URL).href, { waitUntil: 'domcontentloaded' });
+      }
+      await this.location.waitFor({ state: 'visible', timeout: 15000 });
       await attachStepScreenshot(this.page, '01 - Search Hotel page opened');
     });
   }

@@ -5,6 +5,7 @@ import BookHotel from '../Pages/BookHotel';
 import searchData from '../testdata/SearchData.json';
 import bookData from '../testdata/Bookhotel.json';
 import { attachStepScreenshot } from '../Utilities/screenshot';
+import LogoutPage from '../Pages/LogoutPage';
 
 let bookPage;
 
