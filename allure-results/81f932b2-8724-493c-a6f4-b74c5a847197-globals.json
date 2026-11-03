@@ -1,0 +1,1 @@
+{"attachments":[],"errors":[{"message":"beforeEach hook failed: Test timeout of 60000ms exceeded while running \"beforeEach\" hook.","trace":"Test timeout of 60000ms exceeded while running \"beforeEach\" hook.\n    at D:\\OneDrive - PERSEUS MANAGEMENT GROUP INC\\Desktop\\Automation Testing\\tests\\BookHotel.spec.js:12:6","timestamp":1793691072889}]}

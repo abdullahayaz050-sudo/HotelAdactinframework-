@@ -27,11 +27,11 @@ export default defineConfig({
     timeout: 10000,
   },
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-reporter: [ 
-  ['list'], 
-  ['allure-playwright'],
-  ['html', { outputFolder: 'playwright-report' }] 
-],
+reporter: [
+    ['list'],
+    ['allure-playwright', { outputFolder: 'allure-results' }],
+    ['html', { outputFolder: 'playwright-report', open: 'never' }]
+  ],
   // reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
