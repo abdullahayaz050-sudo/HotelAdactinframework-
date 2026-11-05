@@ -50,3 +50,17 @@ test('Get All Users - Invalid Method Expects 404 or 405', async ({ request }) =>
 
   expect([404, 405]).toContain(response.status());
 });
+
+test('Get Single User - Invalid User ID Expects 404', async ({ request }) => {
+  const response = await request.get(
+    'https://api-testing-postman.vercel.app/api/v1/users/invalid-user-id-999'
+  );
+
+  const responseBody = await response.text();
+  await test.info().attach('Invalid User Response', {
+    body: responseBody,
+    contentType: 'application/json',
+  });
+
+  expect(response.status()).toBe(404);
+});
