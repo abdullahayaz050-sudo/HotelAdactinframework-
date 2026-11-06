@@ -75,3 +75,22 @@ test('Delete User - Invalid Endpoint Expects 404', async ({ request }) => {
 
   expect(response.status()).toBe(404);
 });
+
+test('Delete User - Invalid Token Expects 401', async ({ request }) => {
+  const response = await test.step('Delete with invalid token', async () => {
+    return await request.delete(
+      'https://api-testing-postman.vercel.app/api/v1/users/delete-account',
+      {
+        headers: { Authorization: 'Bearer invalid-token' }
+      }
+    );
+  });
+
+  const responseBody = await response.text();
+  await test.info().attach('Invalid Token Response', {
+    body: responseBody,
+    contentType: 'application/json',
+  });
+
+  expect(response.status()).toBe(401);
+});
