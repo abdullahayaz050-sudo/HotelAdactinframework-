@@ -88,3 +88,27 @@ test('PUT User - Invalid Endpoint Expects 404', async ({ request }) => {
 
   expect(response.status()).toBe(404);
 });
+
+test('PUT User - Invalid Token Expects 401', async ({ request }) => {
+  const response = await test.step('Update with invalid token', async () => {
+    return await request.put(
+      'https://api-testing-postman.vercel.app/api/v1/users/replace-account',
+      {
+        headers: { Authorization: 'Bearer invalid-token' },
+        data: {
+          fullname: 'Updated User',
+          email: 'updateduser@example.com',
+          username: 'updatedUser'
+        }
+      }
+    );
+  });
+
+  const responseBody = await response.text();
+  await test.info().attach('Invalid Token Response', {
+    body: responseBody,
+    contentType: 'application/json',
+  });
+
+  expect(response.status()).toBe(401);
+});
