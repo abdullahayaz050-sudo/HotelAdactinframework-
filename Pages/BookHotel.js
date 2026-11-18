@@ -5,9 +5,9 @@ import { APP_BASE_URL } from './BasePage';
 class BookHotel {
     constructor(page) {
         this.page = page;
-        this.firstName = page.locator('#first_name');
-        this.lastName = page.locator('#last_name');
-        this.billingAddress = page.locator('#address');
+        this.firstName = page.locator('//input[@id="first_name"]');
+        this.lastName = page.locator('//input[@id="last_name"]');
+        this.billingAddress = page.locator('//textarea[@id="address"]');
         this.creditCardNumber = page.locator('#cc_num');
         this.creditCardType = page.locator('#cc_type');
         this.expiryMonth = page.locator('#cc_exp_month');

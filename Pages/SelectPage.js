@@ -6,9 +6,10 @@ class SelectPage {
   constructor(page) {
     this.page = page;
 
-    this.radioButton = page.locator('#radiobutton_0');
-    this.continueButton = page.locator('#continue');
+    this.radioButton = page.locator('input[type="radio"]#radiobutton_0');
+    this.continueButton = page.locator('input[type="submit"]#continue');
   }
+
 
   async gotoSelectPage() {
     await test.step('Navigate to Select Hotel Page', async () => {

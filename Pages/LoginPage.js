@@ -6,10 +6,10 @@ class LoginPage {
   constructor(page) {
     this.page = page;
 
-    this.username = page.locator('#username');
-    this.password = page.locator('#password');
-    this.loginButton = page.locator('#login');
-    this.expectedMsg = page.locator('.welcome_menu');
+    this.username = page.locator('//input[@id="username"]');
+    this.password = page.locator('//input[@id="password"]');
+    this.loginButton = page.locator('//input[@id="login"]');
+    this.expectedMsg = page.locator('//td[@class="welcome_menu"]');
   }
 
   message(text) {
